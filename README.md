@@ -1,2 +1,2 @@
 # React-Github-Battle
-Demo React application 
+Demo React application using Github API's.
