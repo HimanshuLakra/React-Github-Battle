@@ -17,6 +17,8 @@ class Tabs extends React.Component{
        selectedTab: selectedTab
       }
     });
+
+    this.props.getSelectedLanguage(selectedTab);
   }
 
   render(){
@@ -24,19 +26,23 @@ class Tabs extends React.Component{
      var tabList = ["All", "Java", "React", "JavaScript", "Ruby"];
 
     return (
-      <ul className = "tablist">
-         {tabList.map(function (listItem){
-           return (
-            <li 
-              style = { listItem === this.state.selectedTab ? {color: '#d0021b'} : null}
-              onClick = {this.updateTabState.bind(null,listItem)} 
-              key={listItem}> 
-              {listItem} 
-            </li>
-           )
-         },this)}
+      <div>
+        <ul className = "tabList">
+           {tabList.map((listItem) => {
+             return (
+              <li 
+                style = { listItem === this.state.selectedTab ? {color: '#d0021b'} : null}
+                onClick = {() => this.updateTabState(listItem)}
+                key={listItem}> 
+                {listItem} 
+              </li>
+             )
+           })}
 
-      </ul>
+        </ul>
+
+        <div className = "seperator"> </div>
+      </div>
     )
   }
 }

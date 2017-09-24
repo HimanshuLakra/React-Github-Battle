@@ -22,11 +22,18 @@ li {
 list-style-type: none;
 }
 
-.tablist{
+.tabList{
   display: flex;
 }
 
-.tablist li {
+.flex-view {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+.tabList li {
   cursor: point;
   font-weight: bold;
   margin-left: 25px;
@@ -35,4 +42,55 @@ list-style-type: none;
 .seperator {
   height: 2px; 
   background: #eeeeee;
+}
+
+.repo-item {
+  margin: 16px;
+}
+
+.avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.card {
+  border: 2px solid;
+  border-color: #eeeeee;
+  border-width: 2px;
+  width: 250px;
+  margin: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 16px;
+}
+
+.full-name {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.repo-name {
+  margin-top: 8px;
+  font-size: 12px;
+  float: left;
+}
+
+.description {
+  font-size: 14px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.horizontal {
+  overflow: hidden;
+}
+
+.stars {
+  margin-top: 8px;
+  float: left;
+  margin-left: 80px;
+  font-size: 12px;
 }
