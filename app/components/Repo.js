@@ -3,10 +3,20 @@ import 'react-bootstrap';
 
 class Repo extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.openGithubRepo = this.openGithubRepo.bind(this);
+  }
+
+  openGithubRepo(repoUrl){
+    console.log(repoUrl);
+    window.open(repoUrl,'_blank');
+  }
+
   render() {
-      console.log(this.props.repo);
+
     return (
-        <div id = "repo_item" className = "card" >
+        <div id = "repo_item" className = "card" onClick = {() => this.openGithubRepo(this.props.repo.html_url)}>
           <div id = "img"> <img className= "avatar" src = { this.props.repo.owner.avatar_url } /> </div>
           <div id = "full_name" className = "full-name"> { this.props.repo.name } </div>
           <div id = "user_name" className = "description"> { this.props.repo.description.substring(0,70) }...</div>
